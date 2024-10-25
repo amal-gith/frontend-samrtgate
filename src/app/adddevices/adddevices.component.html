@@ -1,0 +1,170 @@
+  
+<!--
+  <div class="max-w-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <h2 class="flex justify-center mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new Device</h2>
+    
+    <div class="h-96 overflow-y-auto">
+      <form>
+        <div class="flex space-x-4">
+            <mat-form-field appearance="fill" class="flex-1">
+                <mat-label>Device ID</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="flex-1">
+                <mat-label>Type of device</mat-label>
+                <mat-select>
+                    <ng-container *ngFor="let device of devices">
+                        <mat-option [value]="device.value">{{ device.viewValue }}</mat-option>
+                    </ng-container>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <span class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type of connectivity</span>
+        <ul class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="horizontal-list-radio-license" type="radio" value="Bluetooth" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="horizontal-list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Bluetooth</label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="horizontal-list-radio-id" type="radio" value="Wi-Fi" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="horizontal-list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Wi-Fi</label>
+                </div>
+            </li>
+            <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <div class="flex items-center pl-3">
+                    <input id="horizontal-list-radio-military" type="radio" value="LoRa" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="horizontal-list-radio-military" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">LoRa</label>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="flex space-x-10 max-w-md">
+            <mat-form-field appearance="fill" class="my-4 flex-1">
+                <mat-label>Mac Address</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <div class="mt-11 flex"><p><mat-slide-toggle>Connect!</mat-slide-toggle></p></div>
+        </div>
+        
+        <div class="flex space-x-10 max-w-md">
+            <mat-form-field appearance="fill" class="my-4 flex-1">
+                <mat-label>IP Address</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <div class="mt-11 flex"><p><mat-slide-toggle>Connect!</mat-slide-toggle></p></div>
+        </div>
+        
+        <div class="flex space-x-10 max-w-md">
+            <mat-form-field appearance="fill" class="my-4 flex-1">
+                <mat-label>LoRa Address</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <div class="mt-11 flex"><p><mat-slide-toggle>Connect!</mat-slide-toggle></p></div>
+        </div>
+        <div class=" justify-center flex">
+            <button type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Add Device</button>
+    </div>
+      </form>
+ 
+    </div>
+
+  </div>
+   -->
+  
+
+   <!--   --------------------------------------  -->
+  
+  
+  
+  
+  
+  
+   <div *ngIf="isFormVisible" class="relative max-w-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <button type="button"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            (click)="closeForm()">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  
+    <h2 class="flex justify-center mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new Device</h2>
+  
+    <div class="h-96 overflow-y-auto">
+      <form (ngSubmit)="addDevice()">
+        <div class="flex space-x-4">
+          <mat-form-field appearance="fill" class="flex-1">
+            <mat-label>Device ID</mat-label>
+            <input matInput [(ngModel)]="deviceId" name="deviceId" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="flex-1">
+            <mat-label>Type of device</mat-label>
+            <mat-select [(value)]="selectedDeviceType" name="deviceType" required>
+              <mat-option *ngFor="let device of devices" [value]="device.viewValue">
+                {{ device.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+        </div>
+  
+        <span class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type of connectivity</span>
+        <ul class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+          <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <div class="flex items-center pl-3">
+              <input id="horizontal-list-radio-bluetooth" type="radio" value="Bluetooth" name="connectivity" [(ngModel)]="selectedConnectivity" class="w-4 h-4">
+              <label for="horizontal-list-radio-bluetooth" class="w-full py-3 ml-2 text-sm font-medium">Bluetooth</label>
+            </div>
+          </li>
+          <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <div class="flex items-center pl-3">
+              <input id="horizontal-list-radio-wifi" type="radio" value="Wi-Fi" name="connectivity" [(ngModel)]="selectedConnectivity" class="w-4 h-4">
+              <label for="horizontal-list-radio-wifi" class="w-full py-3 ml-2 text-sm font-medium">Wi-Fi</label>
+            </div>
+          </li>
+          <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <div class="flex items-center pl-3">
+              <input id="horizontal-list-radio-lora" type="radio" value="LoRa" name="connectivity" [(ngModel)]="selectedConnectivity" class="w-4 h-4">
+              <label for="horizontal-list-radio-lora" class="w-full py-3 ml-2 text-sm font-medium">LoRa</label>
+            </div>
+            
+          </li>
+          
+        </ul>
+        <div class="flex space-x-4 my-4">
+          <mat-form-field appearance="fill" class="flex-1">
+            <mat-label>Mac Address</mat-label>
+            <input matInput [(ngModel)]="macAddress" name="macAddress" required>
+          </mat-form-field>
+        
+          <mat-form-field appearance="fill" class="flex-1">
+            <mat-label>Client ID</mat-label>
+            <mat-select [(value)]="selectedDeviceType" name="deviceType" required>
+              <mat-option *ngFor="let device of devices" [value]="device.viewValue">
+                {{ device.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+        <!-- Afficher toujours l'adresse MAC --> 
+         <!--
+        <div class="flex space-x-10 max-w-md">
+          <mat-form-field appearance="fill" class="my-4 flex-1">
+            <mat-label>Mac Address</mat-label>
+            <input matInput [(ngModel)]="macAddress" name="macAddress" required>
+          </mat-form-field>
+          
+        </div>
+   -->
+        <div class="flex justify-center mt-12">
+          <button type="submit" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Add Device</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

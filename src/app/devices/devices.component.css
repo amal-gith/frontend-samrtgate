@@ -1,0 +1,13 @@
+.svg-container {
+    display: flex;
+    align-items: center; /* Aligne verticalement les SVG au centre */
+  }
+  
+  .svg-container svg {
+    margin-right: 8px; /* Espace entre les SVG */
+  }
+  
+  .svg-container svg:last-child {
+    margin-right: 0; /* Supprime la marge du dernier SVG */
+  }
+  

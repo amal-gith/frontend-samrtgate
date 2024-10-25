@@ -1,0 +1,66 @@
+<app-dashboard></app-dashboard>
+
+<div>
+  <nav class="border-gray-200 dark:bg-gray-900 mx-4 my-2"></nav>
+  <div class="p-4 sm:ml-64">
+    <div class="p-4 border-2 shadow-md rounded-lg dark:border-gray-700 flex items-center justify-between">
+      <button class="sm:ml-10 bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              type="button"
+              (click)="openAddUserDialog()">
+        Add Client
+      </button>
+    </div>
+  </div>
+
+  <div class="relative overflow-x-auto sm:rounded-lg pr-7 pl-72">
+    <table class="table-custom w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">ID</th>
+          <th scope="col" class="px-6 py-3">Client Name</th>
+          <th scope="col" class="px-6 py-3">Email</th>
+          <th scope="col" class="px-6 py-3">Number_of_Gateways</th>
+          <th scope="col" class="px-6 py-3">Number_of_Devices</th>
+          <th scope="col" class="px-6 py-3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+          <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ user.ID }}</td>
+          <td class="px-6 py-4">{{ user.Name }}</td>
+          <td class="px-6 py-4">{{ user.email }}</td>
+          <td class="px-6 py-4">{{ user.Number_of_Gateways }}</td>
+          <td class="px-6 py-4">{{ user.Number_of_Devices }}</td>
+          <td class="px-6 py-4">
+            <div class="flex items-center space-x-4">
+              <!-- Icons for actions -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 7l16 0" />
+                <path d="M10 11l0 6" />
+                <path d="M14 11l0 6" />
+                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+              </svg>
+              
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list-details" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M13 5h8" />
+                <path d="M13 9h5" />
+                <path d="M13 15h8" />
+                <path d="M13 19h5" />
+                <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+              </svg>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

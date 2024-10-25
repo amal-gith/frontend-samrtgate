@@ -1,0 +1,85 @@
+<div class="max-w-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+  <!-- Icône centrée -->
+  <div class="flex justify-center mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings-cog" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfd8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12.003 21c-.732 .001 -1.465 -.438 -1.678 -1.317a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c.886 .215 1.325 .957 1.318 1.694" />
+          <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+          <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+          <path d="M19.001 15.5v1.5" />
+          <path d="M19.001 21v1.5" />
+          <path d="M22.032 17.25l-1.299 .75" />
+          <path d="M17.27 20l-1.3 .75" />
+          <path d="M15.97 17.25l1.3 .75" />
+          <path d="M20.733 20l1.3 .75" />
+      </svg>
+  </div>
+
+  <!-- Titre centré -->
+  <h2 class="flex justify-center mb-4 text-xl font-bold text-gray-900 dark:text-white">Settings</h2>
+
+  <div class="flex justify-between">
+      <!-- Section pour le niveau de sécurité -->
+      <div class="w-1/2">
+          <h2 class="mb-4 font-semibold text-gray-900 dark:text-white">Security Level</h2>
+          <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <!-- Radio button pour le niveau de sécurité "High" -->
+              <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                  <div class="flex items-center ps-3">
+                      <input id="list-radio-security-high" type="radio" [(ngModel)]="selectedSecurityLevel" value="high" name="list-radio-security" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                      <label for="list-radio-security-high" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">High</label>
+                  </div>
+              </li>
+              <!-- Radio button pour le niveau de sécurité "Low" -->
+              <li class="w-full border-b border-gray-200 dark:border-gray-600">
+                  <div class="flex items-center ps-3">
+                      <input id="list-radio-security-low" type="radio" [(ngModel)]="selectedSecurityLevel" value="low" name="list-radio-security" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                      <label for="list-radio-security-low" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Low</label>
+                  </div>
+              </li>
+              <!-- Radio button pour le niveau de sécurité "None" -->
+              <li class="w-full border-b border-gray-200 dark:border-gray-600">
+                  <div class="flex items-center ps-3">
+                      <input id="list-radio-security-none" type="radio" [(ngModel)]="selectedSecurityLevel" value="none" name="list-radio-security" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                      <label for="list-radio-security-none" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">None</label>
+                  </div>
+              </li>
+          </ul>
+      </div>
+
+      <!-- Section pour le niveau de priorité -->
+      <div class="w-1/2 flex justify-end">
+          <div>
+              <h2 class="mb-4 font-semibold text-gray-900 dark:text-white">Priority Level</h2>
+              <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                  <!-- Radio button pour le niveau de priorité "High" -->
+                  <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                      <div class="flex items-center ps-3">
+                          <input id="list-radio-priority-high" type="radio" [(ngModel)]="selectedPriorityLevel" value="high" name="list-radio-priority" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                          <label for="list-radio-priority-high" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">High</label>
+                      </div>
+                  </li>
+                  <!-- Radio button pour le niveau de priorité "Low" -->
+                  <li class="w-full border-b border-gray-200 dark:border-gray-600">
+                      <div class="flex items-center ps-3">
+                          <input id="list-radio-priority-low" type="radio" [(ngModel)]="selectedPriorityLevel" value="low" name="list-radio-priority" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                          <label for="list-radio-priority-low" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Low</label>
+                      </div>
+                  </li>
+                  <!-- Radio button pour le niveau de priorité "None" -->
+                  <li class="w-full border-b border-gray-200 dark:border-gray-600">
+                      <div class="flex items-center ps-3">
+                          <input id="list-radio-priority-none" type="radio" [(ngModel)]="selectedPriorityLevel" value="none" name="list-radio-priority" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                          <label for="list-radio-priority-none" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">None</label>
+                      </div>
+                  </li> 
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Bouton pour soumettre les paramètres -->
+  <div class="flex justify-center mt-8">
+      <button (click)="submitSettings()" type="button" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Done</button>
+  </div>
+</div>

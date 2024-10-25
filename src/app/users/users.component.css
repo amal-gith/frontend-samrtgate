@@ -1,0 +1,8 @@
+.icon-container {
+    display: flex; /* Pour aligner les éléments horizontalement */
+}
+
+.icon-container svg {
+    margin-right: 10px; /* Pour ajouter un espace entre les icônes si nécessaire */
+}
+

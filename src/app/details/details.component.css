@@ -1,0 +1,11 @@
+.chart-container {
+    display: flex;
+    justify-content: space-around; /* Espace entre les éléments */
+    align-items: flex-start; /* Aligner en haut */
+  }
+  
+  .chart {
+    width: 45%; /* Ajustez la largeur de chaque graphique */
+    height: 300px; /* Ajustez la hauteur */
+  }
+  
